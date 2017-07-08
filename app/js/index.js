@@ -70,8 +70,8 @@ $(document).ready(function() {
     var value = $("#storage input.ipfsText").val();
     EmbarkJS.Storage.saveText(value).then(function(hash) {
       var key = getKey();
-      addToLog(hash,key);
-      Data.set(key,hash);
+      addToLog("#storage",key);
+      Data.addData(key,hash);
       $("span.textHash").html(key);
       $("input.textHash").val(key);
       //store it in the blockchain
